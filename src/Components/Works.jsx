@@ -1,6 +1,6 @@
 'use client';
 import { Download, Search, CreditCard, Home, ArrowRight } from 'lucide-react';
-
+import Image from 'next/image';
 export default function Works() {
   const steps = [
     {
@@ -8,8 +8,8 @@ export default function Works() {
       title: 'Open Super Canteen',
       description:
         'Access Super Canteen through our mobile app or website to explore an extensive catalog of groceries, snacks, and daily essentials.',
-      icon: <Download className="h-6 w-6 text-green-600" />,
-      color: 'green',
+      icon: <Download className="h-6 w-6 text-orange-600" />,
+      color: 'orange',
     },
     {
       id: 2,
@@ -24,8 +24,8 @@ export default function Works() {
       title: 'Easy Payment',
       description:
         'Choose your preferred payment method — from UPI, cards, wallets, or even cash on delivery. Checkout is smooth, secure, and fast.',
-      icon: <CreditCard className="h-6 w-6 text-green-600" />,
-      color: 'green',
+      icon: <CreditCard className="h-6 w-6 text-orange-600" />,
+      color: 'orange',
     },
     {
       id: 4,
@@ -75,7 +75,7 @@ export default function Works() {
               {/* Arrow between cards (except last) */}
               {index !== steps.length - 1 && (
                 <div className="hidden md:block absolute top-1/2 -right-4 transform -translate-y-1/2">
-                  <ArrowRight className="text-green-600" />
+                  <ArrowRight className="text-orange-600" />
                 </div>
               )}
             </div>

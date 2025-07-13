@@ -7,6 +7,7 @@ import {
   Phone,
   MapPin,
 } from 'lucide-react';
+import Link from 'next/link';
 
 export default function Footer() {
   return (
@@ -16,7 +17,7 @@ export default function Footer() {
         <div className="flex flex-col md:flex-row justify-between gap-12">
           {/* Left - Brand */}
           <div className="flex-1">
-            <h2 className="text-2xl font-bold text-green-400 mb-4">Super Canteen</h2>
+            <h2 className="text-2xl font-bold text-orange-600 mb-4">Super Canteen</h2>
             <p className="text-gray-300 mb-4 leading-relaxed">
               Your trusted partner for fresh groceries and daily essentials.<br />
               Quality products at unbeatable prices.
@@ -34,9 +35,8 @@ export default function Footer() {
             <ul className="space-y-2 text-gray-300">
               <li><a href="#" className="hover:text-white">About us</a></li>
               <li><a href="#" className="hover:text-white">Contact</a></li>
-              <li><a href="#" className="hover:text-white">Terms & Conditions</a></li>
-              <li><a href="#" className="hover:text-white">Privacy Policy</a></li>
-              <li><a href="#" className="hover:text-white">Return Policy</a></li>
+              <li><Link href="/terms&conditions" className="hover:text-white">Terms & Conditions</Link></li>
+              <li><Link href="/privacy-policy" className="hover:text-white">Privacy Policy</Link></li>
             </ul>
           </div>
 

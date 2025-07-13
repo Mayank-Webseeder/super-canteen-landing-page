@@ -10,11 +10,11 @@ import {
 
 export default function AboutSection() {
   return (
-    <section id ="features" className="w-full bg-white py-10 px-4">
+    <section id="features" className="w-full bg-white py-10 px-4">
       <div className="max-w-7xl mx-auto text-center">
         {/* Title */}
         <h2 className="text-3xl md:text-4xl font-bold text-gray-800 mb-4">
-          Why Choose <span className="text-green-600">Super Canteen?</span>
+          Why Choose <span className="text-orange-600">Super Canteen?</span>
         </h2>
         <p className="text-lg text-gray-600 mb-16 max-w-3xl mx-auto">
           We make grocery shopping simple, convenient, and affordable for everyone. Experience the future of grocery shopping with our innovative features.
@@ -23,10 +23,10 @@ export default function AboutSection() {
         {/* Features Grid */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           <FeatureCard
-            icon={<ShoppingCart className="h-7 w-7 text-green-600" />}
+            icon={<ShoppingCart className="h-7 w-7 text-orange-600" />}
             title="Wide Selection"
             desc="10,000+ products from groceries to household items"
-            color="green"
+            color="orange"
           />
           <FeatureCard
             icon={<Clock className="h-7 w-7 text-orange-500" />}
@@ -35,10 +35,10 @@ export default function AboutSection() {
             color="orange"
           />
           <FeatureCard
-            icon={<Truck className="h-7 w-7 text-green-600" />}
+            icon={<Truck className="h-7 w-7 text-orange-600" />}
             title="Free Delivery"
             desc="Free delivery on orders above ₹500"
-            color="green"
+            color="orange"
           />
           <FeatureCard
             icon={<Shield className="h-7 w-7 text-orange-500" />}
@@ -47,10 +47,10 @@ export default function AboutSection() {
             color="orange"
           />
           <FeatureCard
-            icon={<Percent className="h-7 w-7 text-green-600" />}
+            icon={<Percent className="h-7 w-7 text-orange-600" />}
             title="Best Prices"
             desc="Competitive prices just like DMart"
-            color="green"
+            color="orange"
           />
           <FeatureCard
             icon={<Headphones className="h-7 w-7 text-orange-500" />}
@@ -65,11 +65,11 @@ export default function AboutSection() {
 }
 
 function FeatureCard({ icon, title, desc, color }) {
-  const iconBg = color === 'green' ? 'bg-green-100' : 'bg-orange-100';
+  const iconBg = 'bg-orange-100';
 
   return (
     <div
-      className={`rounded-xl p-8 bg-white text-center shadow-sm border border-transparent transition-all duration-300 hover:shadow-lg hover:-translate-y-1 hover:border-green-500`}
+      className={`rounded-xl p-8 bg-white text-center shadow-sm border border-transparent transition-all duration-300 hover:shadow-lg hover:-translate-y-1 hover:border-orange-500`}
     >
       <div
         className={`w-14 h-14 mx-auto rounded-full flex items-center justify-center mb-4 ${iconBg}`}

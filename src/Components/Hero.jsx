@@ -6,7 +6,7 @@ export default function Hero() {
     <section id="home" className="w-full bg-white min-h-screen pt-28 pb-20 flex items-center justify-center">
       <div className="max-w-3xl w-full text-center px-6 flex flex-col justify-center h-full">
         <h1 className="text-4xl md:text-5xl font-bold text-gray-800 mb-8 leading-tight">
-          Welcome to <span className="text-green-600">Super Canteen</span>
+          Welcome to <span className="text-orange-600">Super Canteen</span>
         </h1>
 
         <p className="text-lg text-gray-700 mb-6">

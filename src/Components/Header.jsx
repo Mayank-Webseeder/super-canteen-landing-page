@@ -3,6 +3,7 @@
 import { useState, useEffect, useRef } from 'react';
 import { Menu, X } from 'lucide-react';
 import Link from 'next/link';
+import Image from 'next/image';
 import { usePathname } from 'next/navigation';
 
 export default function Header() {
@@ -13,9 +14,8 @@ export default function Header() {
   const lastScrollY = useRef(0);
   const pathname = usePathname();
 
-  const navItems = ['Home', 'Features', 'How It Works', 'Testimonials', 'Contact Us'];
+  const navItems = ['Home', 'Features', 'How It Works', 'Contact Us'];
 
-  // Scroll behavior
   useEffect(() => {
     const handleScroll = () => {
       const currentY = window.scrollY;
@@ -28,7 +28,6 @@ export default function Header() {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  // Section detection using IntersectionObserver
   useEffect(() => {
     const observer = new IntersectionObserver(
       (entries) => {
@@ -58,7 +57,14 @@ export default function Header() {
         {/* Logo */}
         <Link href="/" className="inline-block">
           <div className="flex items-center ml-2 space-x-2 cursor-pointer">
-            <span className="text-2xl sm:text-3xl font-bold text-green-700 hover:text-green-900 transition duration-300">
+            <Image
+              src="/logo.jpeg"
+              alt="Logo"
+              width={60}
+              height={60}
+              className="rounded-full object-cover"
+            />
+            <span className="text-2xl sm:text-3xl font-bold text-orange-600 hover:text-orange-800 transition duration-300">
               Super Canteen
             </span>
           </div>
@@ -79,20 +85,18 @@ export default function Header() {
                 <li key={item} className="relative group cursor-pointer">
                   <Link
                     href={isContact ? '/contact' : `/#${id}`}
-                    className={`text-black transition-all duration-200 ${
-                      isActive
-                        ? 'text-green-800 font-bold'
-                        : 'group-hover:text-black group-hover:font-bold'
-                    }`}
+                    className={`text-black transition-all duration-200 ${isActive
+                      ? 'text-orange-700 font-bold'
+                      : 'group-hover:text-black group-hover:font-bold'
+                      }`}
                   >
                     {item}
                   </Link>
                   <span
-                    className={`absolute left-0 -bottom-1 h-[2px] transition-all duration-300 ${
-                      isActive
-                        ? 'w-full bg-black'
-                        : 'w-0 group-hover:w-full group-hover:bg-black'
-                    }`}
+                    className={`absolute left-0 -bottom-1 h-[2px] transition-all duration-300 ${isActive
+                      ? 'w-full bg-orange-700'
+                      : 'w-0 group-hover:w-full group-hover:bg-orange-700'
+                      }`}
                   />
                 </li>
               );
@@ -122,7 +126,7 @@ export default function Header() {
                   <Link
                     href={item === 'Contact Us' ? '/contact' : `/#${id}`}
                     onClick={() => setIsOpen(false)}
-                    className="block hover:text-green-400 transition-colors duration-200"
+                    className="block hover:text-orange-500 transition-colors duration-200"
                   >
                     {item}
                   </Link>

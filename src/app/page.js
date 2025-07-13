@@ -4,6 +4,8 @@ import Hero from "@/Components/Hero";
 import Footer from "@/Components/Footer";
 import About from "@/Components/About";
 import Works from "@/Components/Works";
+import GetInTouch from "@/Components/GetInTouch";
+import Store from "@/Components/Store";
 
 
 export default function Home() {
@@ -15,6 +17,8 @@ export default function Home() {
         <Hero />
         <About />
         <Works />
+        <Store />
+        <GetInTouch />
       </main> 
       <Footer/>
     </div>
