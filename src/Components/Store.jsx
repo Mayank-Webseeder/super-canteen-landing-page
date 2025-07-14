@@ -36,17 +36,15 @@ export default function Store() {
   };
 
   return (
-    //store section
-  
     <section className="w-full bg-white py-10 px-4">
       <div className="max-w-7xl mx-auto">
-        <h2 className="text-4xl font-bold text-center text-gray-800 mb-16">
+        <h2 className="text-3xl sm:text-4xl font-bold text-center text-gray-800 mb-12 sm:mb-16">
           Our <span className="text-orange-500">Store</span>
         </h2>
 
-        <div className="flex flex-col lg:flex-row items-stretch gap-8 h-[300px]">
+       <div className="flex flex-col lg:flex-row items-stretch gap-8 lg:h-[350px]">
           {/* Image Section */}
-          <div className="w-full lg:w-1/2 rounded-[50px] overflow-hidden h-full">
+          <div className="w-full lg:w-1/2 h-full rounded-[30px] overflow-hidden">
             <Image
               src={testimonials[index].image}
               alt="Store"
@@ -57,27 +55,26 @@ export default function Store() {
           </div>
 
           {/* Content Section */}
-          <div className="w-full lg:w-1/2 bg-blue-50 rounded-lg p-6 shadow-sm relative flex flex-col justify-between h-full overflow-hidden">
-            <div className='mb-5'>
-              <h3 className="text-2xl font-semibold text-gray-800 mb-2">
+          <div className="w-full lg:w-1/2 h-full bg-blue-50 rounded-lg p-5 md:p-8 shadow-sm relative flex flex-col justify-between">
+            <div>
+              <h3 className="text-xl md:text-2xl font-semibold text-gray-800 mb-3">
                 {testimonials[index].heading}
               </h3>
-              <p className="text-lg md:text-xl font-light text-gray-800 leading-relaxed mb-4">
+              <p className="text-base md:text-lg font-light text-gray-800 leading-relaxed mb-4">
                 “{testimonials[index].message}”
               </p>
             </div>
 
-            {/* Navigation Arrows */}
-            <div className="flex justify-between mt-5">
+            <div className="flex justify-between">
               <button
                 onClick={handlePrev}
-                className="bg-orange-500 hover:bg-orange-600 text-white p-3 rounded-full"
+                className="bg-orange-500 hover:bg-orange-600 text-white p-2 md:p-3 rounded-full"
               >
                 <ArrowLeft className="w-4 h-4" />
               </button>
               <button
                 onClick={handleNext}
-                className="bg-orange-500 hover:bg-orange-600 text-white p-3 rounded-full"
+                className="bg-orange-500 hover:bg-orange-600 text-white p-2 md:p-3 rounded-full"
               >
                 <ArrowRight className="w-4 h-4" />
               </button>
