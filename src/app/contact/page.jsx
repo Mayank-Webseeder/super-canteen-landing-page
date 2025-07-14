@@ -27,7 +27,7 @@ export default function ContactPage() {
             {/* Background Image */}
             <div className="absolute inset-0">
               <Image
-                src="/Contact-us.jpg"
+                src="/contact-us.jpg"
                 alt="Contact Background"
                 fill
                 className="object-cover object-center filter brightness-[0.4] blur-sm"
