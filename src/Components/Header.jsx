@@ -105,7 +105,7 @@ export default function Header() {
         <div className="flex items-center space-x-4 md:space-x-6 text-black">
           {/* Instagram Icon */}
           <a
-            href="https://www.instagram.com/supercanteen"
+            href="https://www.instagram.com/super.canteen.aligarh/"
             target="_blank"
             rel="noopener noreferrer"
             className="hover:text-orange-500 transition-colors duration-200"
