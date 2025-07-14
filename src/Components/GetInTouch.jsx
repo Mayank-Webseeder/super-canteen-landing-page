@@ -1,6 +1,7 @@
 'use client';
 import { Phone, Mail, MapPin } from 'lucide-react';
 import ContactForm from './Contactform';
+import Link from 'next/link';
 
 export default function GetInTouch() {
   return (
@@ -26,9 +27,16 @@ export default function GetInTouch() {
             </div>
             <div className="flex items-center gap-4">
               <MapPin className="text-orange-500" />
-              <span>123 Super Canteen Street, Indore, India</span>
+              <span>Near Jain Petrol Pump, Naurangabad, Aligarh - 202001</span>
             </div>
           </div>
+
+          {/* Contact With Us Button */}
+          <Link href="/contact">
+            <button className="mt-6 bg-orange-500 hover:bg-orange-600 text-white px-6 py-3 rounded-lg text-base font-medium transition-transform transform hover:scale-105">
+              Contact With Us
+            </button>
+          </Link>
         </div>
 
         {/* Right - Form */}

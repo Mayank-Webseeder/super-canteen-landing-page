@@ -1,7 +1,7 @@
 'use client';
 
 import { useState, useEffect, useRef } from 'react';
-import { Menu, X } from 'lucide-react';
+import { Menu, X, Instagram } from 'lucide-react';
 import Link from 'next/link';
 import Image from 'next/image';
 import { usePathname } from 'next/navigation';
@@ -102,10 +102,21 @@ export default function Header() {
           </ul>
         </div>
 
-        <div className="md:hidden text-black">
+        <div className="flex items-center space-x-4 md:space-x-6 text-black">
+          {/* Instagram Icon */}
+          <a
+            href="https://www.instagram.com/supercanteen"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="hover:text-orange-500 transition-colors duration-200"
+          >
+            <Instagram size={24} />
+          </a>
+
+          {/* Hamburger Menu */}
           <button
             onClick={() => setIsOpen(!isOpen)}
-            className="transition-transform duration-300 transform hover:scale-110"
+            className="transition-transform duration-300 transform hover:scale-110 md:hidden"
           >
             {isOpen ? <X size={28} /> : <Menu size={28} />}
           </button>

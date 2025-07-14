@@ -1,5 +1,6 @@
 
 import { Raleway } from 'next/font/google';
+import CustomCursor from '@/Components/CustomCursor';
 import './globals.css';
 
 const raleway = Raleway({
@@ -18,6 +19,7 @@ export default function RootLayout({ children }) {
     <html lang="en" >
       <body className={`${raleway.variable} font-raleway antialiased`}>
         {children}
+        <CustomCursor />
       </body>
     </html>
   );
