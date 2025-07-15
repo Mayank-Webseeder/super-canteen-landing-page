@@ -1,7 +1,7 @@
 'use client';
+
 import {
   Facebook,
-  Twitter,
   Instagram,
   Mail,
   Phone,
@@ -12,38 +12,48 @@ import Image from 'next/image';
 
 export default function Footer() {
   return (
-    <footer className="w-full bg-gray-900 text-white">
+    <footer className="relative w-full bg-gray-900 text-white overflow-hidden">
+      {/* Rotated Logo on bottom-left */}
+      <div className="absolute top-20 left-[-20]">
+        <Image
+          src="/Logo1.png"
+          alt="Footer Logo"
+          width={170}
+          height={200}
+          className="rotate-[90deg] opacity-40"
+        />
+      </div>
+
       <div className="mx-auto max-w-screen-xl px-6 py-10">
         {/* Top Footer Grid */}
         <div className="flex flex-col md:flex-row justify-between gap-12">
           {/* Left - Brand */}
           <div className="flex-1 text-center md:text-left">
-            <div className="flex items-center justify-center md:justify-start mb-4">
-              <Image
-                src="/logo.jpeg"
-                alt="Super Canteen Logo"
-                width={40}
-                height={40}
-                className="rounded-full mr-2"
-              />
-              <h2 className="text-2xl font-bold text-orange-600">Super Canteen</h2>
-            </div>
 
             <p className="text-gray-300 mb-4 leading-relaxed">
-              Your trusted partner for fresh groceries and daily essentials.<br />
-              Quality products at unbeatable prices.
+              Your trusted partner for fresh groceries, daily essentials, and household needs.<br />
+              At Super Canteen, we believe in delivering not just products but value, convenience, and reliability right to your doorstep.<br />
             </p>
 
-            <div className="flex justify-center md:justify-start space-x-4">
+
+            <div className="flex flex-col md:flex-row items-center md:items-start gap-4 mt-4">
               <a
                 href="https://www.instagram.com/super.canteen.aligarh/"
                 target="_blank"
                 rel="noopener noreferrer"
+                className="hover:text-white"
               >
-                <Instagram className="h-5 w-5 text-gray-400 hover:text-white cursor-pointer" />
+                <Instagram className="h-6 w-6 mt-2 text-gray-400 hover:text-white cursor-pointer" />
               </a>
+
+              <button className="bg-gray-600 hover:bg-gray-700 text-white px-3 py-2 rounded-lg text-base font-medium transition-transform transform hover:scale-105 flex items-center gap-2">
+                <Image src="/playstore.png" alt="Play Store" width={20} height={20} />
+                Get App
+              </button>
             </div>
+
           </div>
+
           {/* Center - Quick Links */}
           <div className="flex-1 text-center">
             <h3 className="text-lg font-semibold mb-4">Quick Links</h3>
@@ -51,6 +61,7 @@ export default function Footer() {
               <li><a href="#" className="hover:text-white">About us</a></li>
               <li><a href="#" className="hover:text-white">Contact</a></li>
               <li><Link href="/terms&conditions" className="hover:text-white">Terms & Conditions</Link></li>
+              <li><Link href="/refund-policy" className="hover:text-white">Refund Policy</Link></li>
               <li><Link href="/privacy-policy" className="hover:text-white">Privacy Policy</Link></li>
             </ul>
           </div>
@@ -60,15 +71,15 @@ export default function Footer() {
             <h3 className="text-lg font-semibold mb-4 text-white">Contact Us</h3>
             <div className="space-y-4 text-gray-300">
               <div className="flex justify-center md:justify-start items-center">
-                <Phone className="h-4 w-4 mr-3 text-orange-500" />
+                <Phone className="h-4 w-4 mr-3 text-blue-600" />
                 <span>+91 98765 43210</span>
               </div>
               <div className="flex justify-center md:justify-start items-center">
-                <Mail className="h-4 w-4 mr-3 text-orange-500" />
+                <Mail className="h-4 w-4 mr-3 text-blue-600" />
                 <span>support@supercanteen.com</span>
               </div>
               <div className="flex justify-center md:justify-start items-center">
-                <MapPin className="h-4 w-4 mr-3 text-orange-500" />
+                <MapPin className="h-4 w-4 mr-3 text-blue-600" />
                 <span>Near Jain Petrol Pump, Naurangabad, Aligarh</span>
               </div>
             </div>

@@ -15,7 +15,7 @@ export default function ContactPage() {
         {/* Heading */}
         <div className="text-center mb-12">
           <h1 className="text-4xl font-bold text-gray-800 mb-4">
-            Get in <span className="text-orange-500">Touch</span>
+            Get in <span className="text-blue-800 decoration-black">Touch</span>
           </h1>
           <p className="text-gray-600 text-lg">We’re here to answer any questions you may have.</p>
         </div>
@@ -35,16 +35,17 @@ export default function ContactPage() {
             </div>
 
             {/* Content Overlay */}
-            <div className="relative z-10 p-8">
-              <div className="mt-16 rounded-2xl p-8 md:p-10 text-center max-w-3xl mx-auto backdrop-blur-sm bg-white/10">
+            <div className="relative z-10 flex items-center justify-center h-full p-8">
+              <div className="rounded-2xl p-8 md:p-10 text-center max-w-3xl mx-auto backdrop-blur-sm bg-white/10">
                 <h3 className="text-2xl font-semibold text-gray-100 mb-4">Visit Our Outlet</h3>
-                <p className="text-lg text-gray-300">
+                <p className="text-lg text-gray-300 leading-relaxed">
                   📍 <strong>Location:</strong> Aligarh, Uttar Pradesh <br />
                   🕒 <strong>Timing:</strong> 8 AM – 10 PM, All Days <br />
                   📞 <strong>Phone:</strong> +91 98765 43210
                 </p>
               </div>
             </div>
+
 
           </div>
 
