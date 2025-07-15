@@ -1,46 +1,20 @@
 'use client';
 
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useState } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
-import gsap from 'gsap';
-import { TextPlugin } from 'gsap/TextPlugin';
 import { ShoppingBag, MessageSquare } from 'lucide-react';
-
-gsap.registerPlugin(TextPlugin);
 
 const images = ['/hero1.jpg', '/hero2.jpg', '/hero3.jpg', '/hero4.jpg'];
 
 export default function Hero() {
   const [currentImage, setCurrentImage] = useState(0);
-  const textRef = useRef(null);
 
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentImage((prev) => (prev + 1) % images.length);
     }, 3000);
     return () => clearInterval(interval);
-  }, []);
-
-  useEffect(() => {
-    const animateTyping = () => {
-      gsap.to(textRef.current, {
-        text: "Super Canteen",
-        duration: 2,
-        ease: 'power1.inOut',
-        onComplete: () => {
-          gsap.to(textRef.current, {
-            text: '',
-            duration: 1,
-            delay: 1,
-            ease: 'power1.inOut',
-            onComplete: animateTyping,
-          });
-        },
-      });
-    };
-
-    animateTyping();
   }, []);
 
   return (
@@ -59,14 +33,15 @@ export default function Hero() {
 
       <div className="relative z-10 max-w-3xl w-full text-center px-6 flex flex-col justify-center h-full text-white">
         <h1 className="text-4xl md:text-5xl font-bold mb-8 leading-tight">
-          Welcome to <span ref={textRef} className="text-blue-500"></span>
+          Welcome to <span className="text-blue-500">Super Canteen</span>
         </h1>
 
         <p className="text-lg mb-6">
-          Your one-stop destination for fresh groceries, daily essentials, and more at unbeatable prices.
+          Super Canteen is your go-to place for fresh groceries, daily essentials, snacks, and more — all at great prices. From morning needs to midnight cravings, we’ve got everything covered.
         </p>
+
         <p className="text-lg mb-10">
-          With a strong focus on quality, speed, and customer satisfaction, we ensure that your daily needs are met without the hassle.
+          We focus on quality, fast delivery, and customer satisfaction. Enjoy a smooth, hassle-free shopping experience delivered right to your doorstep with Super Canteen.
         </p>
 
         <div className="flex flex-col sm:flex-row gap-4 mt-6 justify-center items-center">

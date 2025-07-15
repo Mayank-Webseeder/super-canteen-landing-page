@@ -103,7 +103,7 @@ const FeatureCard = React.forwardRef(({ icon, title, desc }, ref) => {
   return (
     <div
       ref={ref}
-      className="rounded-xl p-8 bg-white text-center shadow-sm border border-transparent transition-all duration-300 hover:shadow-lg hover:-translate-y-1 hover:border-blue-800"
+      className="rounded-xl p-8 bg-white text-center shadow-md border border-transparent transition-all duration-300 hover:shadow-lg hover:-translate-y-1 hover:border-blue-800"
     >
       <div className="w-14 h-14 mx-auto rounded-full flex items-center justify-center mb-4 bg-blue-100">
         {icon}
@@ -115,3 +115,4 @@ const FeatureCard = React.forwardRef(({ icon, title, desc }, ref) => {
 });
 
 FeatureCard.displayName = 'FeatureCard';
+  

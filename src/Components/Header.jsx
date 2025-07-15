@@ -71,7 +71,7 @@ export default function Header() {
                 <li key={item.name} className="relative group cursor-pointer">
                   <Link
                     href={item.name === 'Contact Us' ? '/contact' : `/#${item.id}`}
-                    className={`text-black transition-all duration-200 ${isActive ? 'text-[#4F46E5] font-bold' : 'group-hover:text-black group-hover:font-bold'}`}
+                    className={`text-black transition-all duration-200 ${isActive ? 'text-[#4F46E5] font-bold' : 'group-hover:text-black'}`}
                   >
                     {item.name}
                   </Link>
@@ -84,14 +84,14 @@ export default function Header() {
           </ul>
         </div>
 
-
         <div className="flex items-center space-x-4 md:space-x-6 text-black">
           <a href="https://www.instagram.com/super.canteen.aligarh/" target="_blank" rel="noopener noreferrer" className="hover:text-[#4F46E5] transition-colors duration-200">
-            <Instagram size={24} />
+            <Instagram size={28} />
           </a>
 
           <button onClick={() => setIsOpen(!isOpen)} className="transition-transform duration-300 transform hover:scale-110 md:hidden">
-            {isOpen ? <X size={28} /> : <SquareMenu size={28} className="text-gray-800 hover:text-blue-800 hover:scale-110 hover:shadow-md transition-all duration-300 cursor-pointer" />}
+            {isOpen ? <X size={28} className='hover:text-blue-800 hover:scale-110 hover:shadow-md transition-all duration-300 cursor-pointer' />
+             : <SquareMenu size={28} className="text-gray-800 hover:text-blue-800 hover:scale-110 hover:shadow-md transition-all duration-300 cursor-pointer" />}
           </button>
         </div>
       </div>
@@ -99,16 +99,20 @@ export default function Header() {
       {/* Mobile Menu */}
       {isOpen && (
         <div className="md:hidden bg-white shadow-lg px-6 pb-4">
-          <ul className="space-y-4 pt-4 font-medium text-gray-800 text-base">
-            {navItems.map((item) => (
-              <li key={item.name}>
+          <ul className="pt-4 font-medium text-gray-800 text-base flex flex-col items-center space-y-4">
+            {navItems.map((item, index) => (
+              <li
+                key={item.name}
+                className="w-full flex justify-center transition-colors duration-300 hover:bg-blue-100 py-2 rounded-md animate-fadeIn"
+                style={{ animationDelay: `${index * 0.1}s`, animationFillMode: 'both' }}
+              >
                 <Link
                   href={item.name === 'Contact Us' ? '/contact' : `/#${item.id}`}
                   onClick={() => setIsOpen(false)}
-                  className="flex items-center gap-2 hover:text-[#4F46E5] transition-colors duration-200"
+                  className="flex items-center gap-3"
                 >
-                  <span>{item.icon}</span>
-                  {item.name}
+                  <span className="w-6 flex justify-center">{item.icon}</span>
+                  <span className="text-center">{item.name}</span>
                 </Link>
               </li>
             ))}
