@@ -51,6 +51,21 @@ export default function Header() {
     return () => observer.disconnect();
   }, []);
 
+  // ✅ Auto close mobile menu on scroll
+  useEffect(() => {
+    if (!isOpen) return;
+
+    const handleScroll = () => {
+      setIsOpen(false);
+    };
+
+    window.addEventListener('scroll', handleScroll);
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, [isOpen]);
+
   return (
     <nav className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ${showNavbar ? 'translate-y-0' : '-translate-y-full'} bg-white shadow-md`}>
       <div className="relative w-full mx-auto px-4 py-1 flex items-center justify-between">
