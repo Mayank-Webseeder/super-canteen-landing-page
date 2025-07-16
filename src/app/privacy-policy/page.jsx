@@ -11,7 +11,7 @@ export default function PrivacyPolicy() {
 
       <div className="relative w-full h-[200px] overflow-hidden mt-16">
         <Image
-          src="/privacy-policy.jpg"
+          src="/privacy-policy.webp"
           alt="Privacy Policy"
           fill
           className="object-cover object-center filter brightness-[0.4] blur-sm"

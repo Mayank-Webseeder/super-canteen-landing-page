@@ -10,7 +10,7 @@ export default function TermsConditions() {
       <Header />
       <div className="w-full relative h-[200px] overflow-hidden mt-16">
         <Image
-          src="/terms&conditions.jpg"
+          src="/terms&conditions.webp"
           alt="Terms and Conditions"
           fill
           priority

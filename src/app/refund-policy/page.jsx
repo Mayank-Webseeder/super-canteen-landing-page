@@ -10,7 +10,7 @@ export default function RefundPolicy() {
             <Header />
             <div className="w-full relative h-[200px] overflow-hidden mt-16">
                 <Image
-                    src="/refund-policy.jpg"
+                    src="/refund-policy.webp"
                     alt="Terms and Conditions"
                     fill
                     priority
