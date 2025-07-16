@@ -41,8 +41,9 @@ export default function Footer() {
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                <Instagram className="h-6 w-6 mt-2 text-gray-400 hover:text-white cursor-pointer" />
+                <Instagram className="h-6 w-6 mt-2 text-gray-400 hover:text-white cursor-pointer transition-colors duration-300" />
               </a>
+
               <button className="bg-gray-600 hover:bg-gray-700 text-white px-3 py-2 rounded-lg text-base font-medium transition-transform transform flex items-center gap-2">
                 <Image src="/playstore.png" alt="Play Store" width={20} height={20} />
                 Get App
