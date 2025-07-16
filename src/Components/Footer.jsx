@@ -36,14 +36,10 @@ export default function Footer() {
 
 
             <div className="flex flex-col md:flex-row items-center md:items-start gap-4 mt-4">
-              <a
-                href="https://www.instagram.com/super.canteen.aligarh/"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <Instagram className="h-6 w-6 mt-2 text-gray-400 hover:text-white cursor-pointer transition-colors duration-300" />
+              <a href="https://www.instagram.com/super.canteen.aligarh/" target="_blank" rel="noopener noreferrer"
+                className="hover:text-[#4F46E5] transition-colors duration-200">
+                <Instagram size={28} />
               </a>
-
               <button className="bg-gray-600 hover:bg-gray-700 text-white px-3 py-2 rounded-lg text-base font-medium transition-transform transform flex items-center gap-2">
                 <Image src="/playstore.png" alt="Play Store" width={20} height={20} />
                 Get App
