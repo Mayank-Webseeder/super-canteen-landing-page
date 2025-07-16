@@ -20,7 +20,7 @@ export default function PrivacyPolicy() {
 
         <div className="absolute inset-0 flex items-center justify-center">
           <h1 className="text-4xl md:text-5xl font-bold text-white">
-            Privacy <span className="text-orange-400">Policy</span>
+            Privacy <span className="text-blue-400">Policy</span>
           </h1>
         </div>
       </div>
@@ -104,7 +104,7 @@ export default function PrivacyPolicy() {
           <h2 className="text-xl font-semibold mb-4">Contact Us</h2>
           <p>
             If you have any questions, concerns, or requests related to this Privacy Policy, please contact us at:<br />
-            📧 <a href="mailto:support@supercanteen.com" className="text-orange-500">support@supercanteen.com</a><br />
+            📧 <a href="mailto:support@supercanteen.com" className="text-blue-500">support@supercanteen.com</a><br />
             📞 Phone: +91 98765 43210<br />
             📍 Address: Near Jain Petrol Pump, Naurangabad, Aligarh, Uttar Pradesh
           </p>

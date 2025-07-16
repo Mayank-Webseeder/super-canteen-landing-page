@@ -1,101 +1,77 @@
 'use client';
 
 import Image from 'next/image';
-import { useState, useEffect, useRef } from 'react';
-import gsap from 'gsap';
-import { Store as StoreIcon, Building2, GraduationCap } from 'lucide-react';
+import { Store as StoreIcon, Building2, GraduationCap, ArrowRight } from 'lucide-react';
 
-const testimonials = [
+const storeData = [
   {
-    heading: 'Vibrant Ambiance & Freshness',
-    message:
-      'Our Aligarh outlet offers a vibrant and welcoming atmosphere, perfect for students and families alike. The store is always stocked with fresh produce, a wide variety of snacks, and daily essentials. Our seating area is cozy, ensuring customers can relax while enjoying their meals.',
-    image: '/store2.jpeg',
+    storeImage: '/store2.webp',
     icon: StoreIcon,
+    title: 'Our Vibrant Ambiance',
+    content: 'Explore our welcoming and vibrant store environment with fresh products and cozy seating.',
   },
   {
-    heading: 'Premium City Center Experience',
-    message:
-      'Visit our premium outlet in the heart of the city! This location features a spacious dining area, modern interiors, and a dedicated section for quick takeaways. The staff is trained to provide quick service, ensuring you’re served within minutes, even during busy hours.',
-    image: '/store1.jpeg',
+    storeImage: '/store1.webp',
     icon: Building2,
+    title: 'Premium City Experience',
+    content: 'Visit our premium outlets in the heart of the city with quick takeaways and modern spaces.',
   },
   {
-    heading: 'Campus Vibes with Student Specials',
-    message:
-      'Our campus outlet is designed specifically for students — fast, affordable, and nutritious meals served in a lively environment. We offer exclusive student combos, refreshing beverages, and comfortable seating, making it the perfect hangout spot between classes.',
-    image: '/store3.jpeg',
+    storeImage: '/store3.webp',
     icon: GraduationCap,
+    title: 'Campus Vibes & Student Specials',
+    content: 'Specially designed for students — affordable meals and a lively atmosphere.',
   },
 ];
 
 export default function Store() {
-  const [index, setIndex] = useState(0);
-  const imageRef = useRef(null);
-  const contentRef = useRef(null);
-
-useEffect(() => {
-  const tl = gsap.timeline();
-
-  tl.fromTo(
-    imageRef.current,
-    { x: -200, opacity: 0 },
-    { x: 0, opacity: 1, duration: 3.5, ease: 'expo.out' }
-  ).fromTo(
-    contentRef.current,
-    { x: 200, opacity: 0 },
-    { x: 0, opacity: 1, duration: 3.5, ease: 'expo.out' },
-    '<' 
-  );
-}, [index]);
-
-
-
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setIndex((prev) => (prev === testimonials.length - 1 ? 0 : prev + 1));
-    }, 3000);
-
-    return () => clearInterval(interval);
-  }, []);
-
-  const IconComponent = testimonials[index].icon;
-
   return (
-    <section className="w-full bg-white py-10 px-4">
-      <div className="max-w-7xl mx-auto">
+    <section className="w-full bg-white py-12 px-4">
+      <div className="max-w-6xl mx-auto">
+        {/* Section Heading */}
         <h2 className="text-3xl font-bold text-center text-blue-800 mb-2">Our Store</h2>
-        <div style={{ width: '170px' }} className="h-1 bg-black mx-auto mb-10"></div>
+        <div className="h-1 bg-black w-32 mx-auto mb-4"></div>
+        <p className="text-center text-gray-600 mb-10 max-w-2xl mx-auto">
+          Discover the unique experiences at each of our stores — whether you seek a vibrant ambiance, premium city life, or student-friendly spaces. We cater to all with quality service and fresh offerings.
+        </p>
 
-        <div className="flex flex-col lg:flex-row items-stretch gap-8 lg:h-[300px]">
-          <div
-            ref={imageRef}
-            className="w-full lg:w-1/2 h-full rounded-[30px] overflow-hidden relative"
-          >
-            <Image
-              key={testimonials[index].image}
-              src={testimonials[index].image}
-              alt="Store"
-              width={900}
-              height={500}
-              className="w-full h-full object-cover object-center"
-            />
-          </div>
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          {storeData.map((item, idx) => {
+            const IconComponent = item.icon;
+            return (
+              <div
+                key={idx}
+                className="relative group flex flex-col items-center text-center border border-gray-200 rounded-2xl overflow-hidden shadow-sm h-[380px] transition-all hover:shadow-xl hover:scale-[1.02]"
+              >
+                {/* Store Image */}
+                <div className="w-full h-[180px] overflow-hidden">
+                  <Image
+                    src={item.storeImage}
+                    alt={item.title}
+                    width={400}
+                    height={150}
+                    className="w-full h-full object-cover object-top transform transition-transform duration-500 group-hover:scale-105"
+                  />
+                </div>
 
-          <div
-            ref={contentRef}
-            className="w-full lg:w-1/2 h-full bg-blue-50 rounded-[30px] p-5 md:p-8 shadow-sm relative flex flex-col justify-center"
-          >
-            <div className="flex justify-center mb-4">
-              <IconComponent className="w-10 h-10 text-blue-800" />
-            </div>
-            <h3 className="text-xl md:text-2xl font-semibold text-gray-800 mb-3 text-center">
-              {testimonials[index].heading}
-            </h3>
-            <p className="text-base md:text-lg font-light text-gray-800 leading-relaxed text-center">
-              “{testimonials[index].message}”
-            </p>
-          </div>
+                {/* Horizontal Line */}
+                <div className="border-t border-black w-full"></div>
+
+                {/* Content */}
+                <div className="relative flex flex-col items-center px-4 pt-4 pb-2 flex-grow overflow-hidden border-t border-gray-300">
+                  <div className="bg-blue-100 text-blue-800 rounded-full w-10 h-10 flex items-center justify-center mb-2">
+                    <IconComponent className="w-5 h-5" />
+                  </div>
+
+                  <h3 className="text-lg font-semibold text-gray-800 mb-1 group-hover:text-blue-800 transition-colors">{item.title}</h3>
+                  <p className="text-gray-600 text-sm">{item.content}</p>
+                </div>
+
+                {/* Arrow */}
+                <ArrowRight className="absolute right-4 bottom-2 mt-3 text-black group-hover:text-blue-800 group-hover:translate-x-1 transition-all" />
+              </div>
+            );
+          })}
         </div>
       </div>
     </section>

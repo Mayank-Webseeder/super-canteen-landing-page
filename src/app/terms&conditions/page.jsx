@@ -18,7 +18,7 @@ export default function TermsConditions() {
         />
         <div className="absolute inset-0 flex items-center justify-center">
           <h1 className="text-4xl md:text-5xl font-bold text-white">
-            Terms & <span className="text-orange-400">Conditions</span>
+            Terms & <span className="text-blue-400">Conditions</span>
           </h1>
         </div>
       </div>
@@ -90,7 +90,7 @@ export default function TermsConditions() {
           <h2 className="text-xl font-semibold mb-4">Contact Information</h2>
           <p>
             For any questions regarding these Terms & Conditions, you can reach out to us at:<br />
-            📧 Email: <a href="mailto:support@supercanteen.com" className="text-orange-500">support@supercanteen.com</a><br />
+            📧 Email: <a href="mailto:support@supercanteen.com" className="text-blue-500">support@supercanteen.com</a><br />
             📞 Phone: +91 98765 43210<br />
             📍 Address: Near Jain Petrol Pump, Naurangabad, Aligarh, Uttar Pradesh
           </p>

@@ -51,19 +51,11 @@ export default function Header() {
     return () => observer.disconnect();
   }, []);
 
-  // ✅ Auto close mobile menu on scroll
   useEffect(() => {
     if (!isOpen) return;
-
-    const handleScroll = () => {
-      setIsOpen(false);
-    };
-
+    const handleScroll = () => setIsOpen(false);
     window.addEventListener('scroll', handleScroll);
-
-    return () => {
-      window.removeEventListener('scroll', handleScroll);
-    };
+    return () => window.removeEventListener('scroll', handleScroll);
   }, [isOpen]);
 
   return (
@@ -105,8 +97,11 @@ export default function Header() {
           </a>
 
           <button onClick={() => setIsOpen(!isOpen)} className="transition-transform duration-300 transform hover:scale-110 md:hidden">
-            {isOpen ? <X size={28} className='hover:text-blue-800 hover:scale-110 hover:shadow-md transition-all duration-300 cursor-pointer' />
-             : <SquareMenu size={28} className="text-gray-800 hover:text-blue-800 hover:scale-110 hover:shadow-md transition-all duration-300 cursor-pointer" />}
+            {isOpen ? (
+              <X size={28} className='hover:text-blue-800 hover:scale-110 hover:shadow-md transition-all duration-300 cursor-pointer' />
+            ) : (
+              <SquareMenu size={28} className="text-gray-800 hover:text-blue-800 hover:scale-110 hover:shadow-md transition-all duration-300 cursor-pointer" />
+            )}
           </button>
         </div>
       </div>
@@ -115,23 +110,47 @@ export default function Header() {
       {isOpen && (
         <div className="md:hidden bg-white shadow-lg px-6 pb-4">
           <ul className="pt-4 font-medium text-gray-800 text-base flex flex-col items-center space-y-4">
-            {navItems.map((item, index) => (
-              <li
-                key={item.name}
-                className="w-full flex justify-center transition-colors duration-300 hover:bg-blue-100 py-2 rounded-md animate-fadeIn"
-                style={{ animationDelay: `${index * 0.1}s`, animationFillMode: 'both' }}
-              >
-                <Link
-                  href={item.name === 'Contact Us' ? '/contact' : `/#${item.id}`}
-                  onClick={() => setIsOpen(false)}
-                  className="flex items-center gap-3"
+            {navItems.map((item, index) => {
+              const isActive = item.name === 'Contact Us'
+                ? pathname === '/contact'
+                : activeSection === item.id;
+
+              return (
+                <li
+                  key={item.name}
+                  className={`w-full flex justify-center transition-colors duration-300 py-2 rounded-md animate-fadeIn ${
+                    isActive ? 'bg-blue-100 text-blue-800' : 'hover:bg-blue-100'
+                  }`}
+                  style={{ animationDelay: `${index * 0.1}s`, animationFillMode: 'both' }}
                 >
-                  <span className="w-6 flex justify-center">{item.icon}</span>
-                  <span className="text-center">{item.name}</span>
-                </Link>
-              </li>
-            ))}
+                  <Link
+                    href={item.name === 'Contact Us' ? '/contact' : `/#${item.id}`}
+                    onClick={() => setIsOpen(false)}
+                    className="flex items-center gap-3"
+                  >
+                    <span className="w-6 flex justify-center">{item.icon}</span>
+                    <span className="text-center">{item.name}</span>
+                  </Link>
+                </li>
+              );
+            })}
           </ul>
+
+          <div className="border-t border-gray-300 my-4"></div>
+
+          <div
+            className="text-center text-gray-800 space-y-2 text-[14px] animate-fadeIn"
+            style={{ animationDelay: `${navItems.length * 0.1}s`, animationFillMode: 'both' }}
+          >
+            <div className="flex items-center justify-center gap-2">
+              <span>📧</span>
+              <span>support@supercanteen.com</span>
+            </div>
+            <div className="flex items-center justify-center gap-2">
+              <span>📞</span>
+              <span>+91 98765 43210</span>
+            </div>
+          </div>
         </div>
       )}
     </nav>

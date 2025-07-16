@@ -1,34 +1,19 @@
 'use client';
 
-import { useEffect, useState } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import { ShoppingBag, MessageSquare } from 'lucide-react';
 
-const images = ['/hero1.jpg', '/hero2.jpg', '/hero3.jpg', '/hero4.jpg'];
-
 export default function Hero() {
-  const [currentImage, setCurrentImage] = useState(0);
-
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setCurrentImage((prev) => (prev + 1) % images.length);
-    }, 3000);
-    return () => clearInterval(interval);
-  }, []);
-
   return (
     <section id="home" className="relative w-full bg-black min-h-screen pt-28 pb-20 flex items-center justify-center overflow-hidden">
-      <div className="absolute inset-0 z-0 transition-opacity duration-1000">
-        {images.map((img, index) => (
-          <Image
-            key={index}
-            src={img}
-            alt={`Background ${index + 1}`}
-            fill
-            className={`object-cover filter blur-sm brightness-50 transition-opacity duration-1000 ${index === currentImage ? 'opacity-100' : 'opacity-0'}`}
-          />
-        ))}
+      <div className="absolute inset-0 z-0">
+        <Image
+          src="/hero5.webp"
+          alt="Background"
+          fill
+          className="object-cover filter blur-sm brightness-50"
+        />
       </div>
 
       <div className="relative z-10 max-w-3xl w-full text-center px-6 flex flex-col justify-center h-full text-white">
@@ -59,7 +44,7 @@ export default function Hero() {
           >
             <button className="bg-gray-600 hover:bg-gray-700 text-white px-6 py-3 rounded-lg text-base font-medium transition-transform transform hover:scale-105 flex items-center gap-2">
               <Image src="/playstore.png" alt="Play Store" width={20} height={20} />
-              Get App
+               Download App
             </button>
           </a>
         </div>

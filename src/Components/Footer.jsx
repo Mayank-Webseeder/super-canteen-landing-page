@@ -1,7 +1,6 @@
 'use client';
 
 import {
-  Facebook,
   Instagram,
   Mail,
   Phone,
@@ -46,7 +45,7 @@ export default function Footer() {
                 <Instagram className="h-6 w-6 mt-2 text-gray-400 hover:text-white cursor-pointer" />
               </a>
 
-              <button className="bg-gray-600 hover:bg-gray-700 text-white px-3 py-2 rounded-lg text-base font-medium transition-transform transform hover:scale-105 flex items-center gap-2">
+              <button className="bg-gray-600 hover:bg-gray-700 text-white px-3 py-2 rounded-lg text-base font-medium transition-transform transform flex items-center gap-2">
                 <Image src="/playstore.png" alt="Play Store" width={20} height={20} />
                 Get App
               </button>
@@ -58,8 +57,8 @@ export default function Footer() {
           <div className="flex-1 text-center">
             <h3 className="text-lg font-semibold mb-4">Quick Links</h3>
             <ul className="space-y-2 text-gray-300">
-              <li><a href="#" className="hover:text-white">About us</a></li>
-              <li><a href="#" className="hover:text-white">Contact</a></li>
+              <li><Link href="/#features" className="hover:text-white">About us</Link></li>
+              <li><Link href="/contact" className="hover:text-white">Contact</Link></li>
               <li><Link href="/terms&conditions" className="hover:text-white">Terms & Conditions</Link></li>
               <li><Link href="/refund-policy" className="hover:text-white">Refund Policy</Link></li>
               <li><Link href="/privacy-policy" className="hover:text-white">Privacy Policy</Link></li>
@@ -69,22 +68,25 @@ export default function Footer() {
           {/* Right - Contact Info */}
           <div className="flex-1 text-center md:text-left">
             <h3 className="text-lg font-semibold mb-4 text-white">Contact Us</h3>
-            <div className="space-y-4 text-gray-300">
-              <div className="flex justify-center md:justify-start items-center">
-                <Phone className="h-4 w-4 mr-3 text-blue-600" />
+            <div className="space-y-4 text-gray-300 text-sm md:text-base">
+
+              <div className="flex items-start md:items-center justify-center md:justify-start gap-2 md:gap-3">
+                <Phone className="h-5 w-5 text-blue-600 flex-shrink-0" />
                 <span>+91 98765 43210</span>
               </div>
-              <div className="flex justify-center md:justify-start items-center">
-                <Mail className="h-4 w-4 mr-3 text-blue-600" />
+
+              <div className="flex items-start md:items-center justify-center md:justify-start gap-2 md:gap-3 break-words">
+                <Mail className="h-5 w-5 text-blue-600 flex-shrink-0" />
                 <span>support@supercanteen.com</span>
               </div>
-              <div className="flex justify-center md:justify-start items-center">
-                <MapPin className="h-4 w-4 mr-3 text-blue-600" />
+
+              <div className="flex items-start md:items-center justify-center md:justify-start gap-2 md:gap-3 break-words">
+                <MapPin className="h-5 w-5 text-blue-600 flex-shrink-0" />
                 <span>Near Jain Petrol Pump, Naurangabad, Aligarh</span>
               </div>
+
             </div>
           </div>
-
         </div>
 
         {/* Bottom Footer Bar */}
