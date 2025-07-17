@@ -34,18 +34,14 @@ export default function Footer() {
               At Super Canteen, we believe in delivering not just products but value, convenience, and reliability right to your doorstep.<br />
             </p>
 
-            <div className="flex flex-col md:flex-row items-center md:items-start gap-4 mt-4">
-              <a
-                href="https://www.instagram.com/super.canteen.aligarh/"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-gray-300 hover:text-white transition-colors duration-200 flex items-center"
-              >
-                <Instagram size={35} />
-              </a>
 
-              <button className="flex items-center gap-2 bg-gray-600 hover:bg-gray-700 text-white px-4 py-2 rounded-lg text-base font-medium transition-all duration-300">
-                <Image src="/playstore.png" alt="Play Store" width={24} height={24} />
+            <div className="flex flex-col md:flex-row items-center md:items-start gap-4 mt-4">
+              <a href="https://www.instagram.com/super.canteen.aligarh/" target="_blank" rel="noopener noreferrer"
+                className="text-gray-300 hover:text-white transition-colors duration-200">
+                <Instagram size={32} />
+              </a>
+              <button className="bg-gray-600 hover:bg-gray-700 text-white px-3 py-2 rounded-lg text-base font-medium transition-transform transform flex items-center gap-2">
+                <Image src="/playstore.png" alt="Play Store" width={20} height={20} />
                 Get App
               </button>
             </div>

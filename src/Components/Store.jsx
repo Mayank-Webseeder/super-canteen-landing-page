@@ -67,8 +67,6 @@ export default function Store() {
                   <p className="text-gray-600 text-sm">{item.content}</p>
                 </div>
 
-                {/* Arrow */}
-                <ArrowRight className="absolute right-4 bottom-2 mt-3 text-black group-hover:text-blue-800 group-hover:translate-x-1 transition-all" />
               </div>
             );
           })}
