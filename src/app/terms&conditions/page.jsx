@@ -90,8 +90,8 @@ export default function TermsConditions() {
           <h2 className="text-xl font-semibold mb-4">Contact Information</h2>
           <p>
             For any questions regarding these Terms & Conditions, you can reach out to us at:<br />
-            📧 Email: <a href="mailto:support@supercanteen.com" className="text-blue-500">support@supercanteen.com</a><br />
-            📞 Phone: +91 98765 43210<br />
+            📧 Email: <a href="mailto:support@supercanteen.com" className="text-blue-500">info@supercanteen.in</a><br />
+            📞 Phone: +91 81265 06700<br />
             📍 Address: Near Jain Petrol Pump, Naurangabad, Aligarh, Uttar Pradesh
           </p>
         </div>

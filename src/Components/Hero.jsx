@@ -34,7 +34,7 @@ export default function Hero() {
 
           <p className="text-lg mb-2 text-gray-300">
             Your ultimate hub for <span className="text-yellow-400 font-semibold">fresh groceries</span>, essentials & snacks — delivered fast!
-          </p>
+          </p>  
 
           <p className="text-lg mb-6 text-gray-300">
             We ensure <span className="text-green-400 font-semibold">top quality</span>, lightning-fast delivery, and customer happiness — right to your doorstep.

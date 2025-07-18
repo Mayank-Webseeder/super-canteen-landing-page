@@ -62,8 +62,8 @@ export default function RefundPolicy() {
                     <h2 className="text-xl font-semibold mb-4">Contact Us</h2>
                     <p>
                         For any refund-related inquiries, please reach out to our support team:<br />
-                        📧 Email: <a href="mailto:support@supercanteen.com" className="text-blue-500">support@supercanteen.com</a><br />
-                        📞 Phone: +91 98765 43210
+                        📧 Email: <a href="mailto:support@supercanteen.com" className="text-blue-500">info@supercanteen.in</a><br />
+                        📞 Phone: +91 81265 06700
                     </p>
                 </div>
             </section>

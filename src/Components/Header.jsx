@@ -144,11 +144,11 @@ export default function Header() {
           >
             <div className="flex items-center justify-center gap-2">
               <span>📧</span>
-              <span>support@supercanteen.com</span>
+              <span>info@supercanteen.in</span>
             </div>
             <div className="flex items-center justify-center gap-2">
               <span>📞</span>
-              <span>+91 98765 43210</span>
+              <span>+91 81265 06700</span>
             </div>
           </div>
         </div>

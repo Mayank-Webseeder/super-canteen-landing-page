@@ -66,12 +66,12 @@ export default function Footer() {
 
               <div className="flex items-start md:items-center justify-center md:justify-start gap-2 md:gap-3">
                 <Phone className="h-5 w-5 text-blue-600 flex-shrink-0" />
-                <span>+91 98765 43210</span>
+                <span>+91 81265 06700</span>
               </div>
 
               <div className="flex items-start md:items-center justify-center md:justify-start gap-2 md:gap-3 break-words">
                 <Mail className="h-5 w-5 text-blue-600 flex-shrink-0" />
-                <span>support@supercanteen.com</span>
+                <span>info@supercanteen.in</span>
               </div>
 
               <div className="flex items-start md:items-center justify-center md:justify-start gap-2 md:gap-3 break-words">

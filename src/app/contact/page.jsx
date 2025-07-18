@@ -41,7 +41,7 @@ export default function ContactPage() {
                 <p className="text-lg text-gray-300 leading-relaxed">
                   📍 <strong>Location:</strong> Aligarh, Uttar Pradesh <br />
                   🕒 <strong>Timing:</strong> 8 AM – 10 PM, All Days <br />
-                  📞 <strong>Phone:</strong> +91 98765 43210
+                  📞 <strong>Phone:</strong> +91 81265 06700
                 </p>
               </div>
             </div>

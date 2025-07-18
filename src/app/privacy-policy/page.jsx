@@ -104,8 +104,8 @@ export default function PrivacyPolicy() {
           <h2 className="text-xl font-semibold mb-4">Contact Us</h2>
           <p>
             If you have any questions, concerns, or requests related to this Privacy Policy, please contact us at:<br />
-            📧 <a href="mailto:support@supercanteen.com" className="text-blue-500">support@supercanteen.com</a><br />
-            📞 Phone: +91 98765 43210<br />
+            📧 <a href="mailto:support@supercanteen.com" className="text-blue-500">info@supercanteen.in</a><br />
+            📞 Phone: +91 81265 06700<br />
             📍 Address: Near Jain Petrol Pump, Naurangabad, Aligarh, Uttar Pradesh
           </p>
         </div>
