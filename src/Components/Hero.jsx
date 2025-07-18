@@ -15,6 +15,7 @@ export default function Hero() {
         loop
         playsInline
         className="absolute inset-0 w-full h-full object-cover"
+        priority
       >
         <source src="/heroo.mp4" type="video/mp4" />
         Your browser does not support the video tag.
@@ -76,6 +77,7 @@ export default function Hero() {
             width={600}
             height={600}
             className="object-contain filter brightness-0 invert contrast-200 animate-spin-slow transition"
+            priority
           />
         </div>
 

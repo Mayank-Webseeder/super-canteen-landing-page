@@ -63,7 +63,8 @@ export default function Header() {
       <div className="relative w-full mx-auto px-4 py-1 flex items-center justify-between">
         <Link href="/" className="inline-block">
           <div className="flex items-center space-x-2 cursor-pointer">
-            <Image src="/Logo.png" alt="Logo" width={200} height={130} className="object-cover" />
+            <Image 
+              src="/Logo.png" alt="Logo" width={200} height={130} className="object-cover" priority />
           </div>
         </Link>
 
