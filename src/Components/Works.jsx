@@ -3,99 +3,89 @@
 import { useEffect, useRef } from 'react';
 import gsap from 'gsap';
 import ScrollTrigger from 'gsap/ScrollTrigger';
-import { Download, Search, CreditCard, Home, ArrowRight } from 'lucide-react';
+import { Download, Search, CreditCard, Home } from 'lucide-react';
 
 gsap.registerPlugin(ScrollTrigger);
 
 export default function Works() {
-  const cardsRef = useRef([]);
+  const stepsRef = useRef([]);
 
   const steps = [
     {
       id: 1,
+      type: 'STEP 1',
       title: 'Open Super Canteen',
-      description:
-        'Access Super Canteen through our mobile app or website to explore an extensive catalog of groceries, snacks, and daily essentials.',
+      description: 'Access Super Canteen via our app or website to explore groceries, snacks & essentials.',
       icon: <Download className="h-6 w-6 text-blue-800" />,
+      bgColor: 'bg-blue-100',
     },
     {
       id: 2,
+      type: 'STEP 2',
       title: 'Browse & Select',
-      description:
-        'Easily browse categories and select your favorite fresh vegetables, fruits, beverages, and packaged items using filters and quick search.',
-      icon: <Search className="h-6 w-6 text-blue-800" />,
+      description: 'Quickly browse & pick your favorite items using search and filters.',
+      icon: <Search className="h-6 w-6 text-green-700" />,
+      bgColor: 'bg-green-100',
     },
     {
       id: 3,
+      type: 'STEP 3',
       title: 'Easy Payment',
-      description:
-        'Choose your preferred payment method — from UPI, cards, wallets, or even cash on delivery. Checkout is smooth, secure, and fast.',
-      icon: <CreditCard className="h-6 w-6 text-blue-800" />,
+      description: 'Pay via UPI, cards, wallets or opt for cash on delivery securely.',
+      icon: <CreditCard className="h-6 w-6 text-purple-700" />,
+      bgColor: 'bg-purple-100',
     },
     {
       id: 4,
+      type: 'STEP 4',
       title: 'Doorstep Delivery',
-      description:
-        'Relax as our delivery partner brings your order to your doorstep — often within just a few hours, ensuring freshness and speed.',
-      icon: <Home className="h-6 w-6 text-blue-800" />,
+      description: 'Sit back & relax while we deliver fresh items quickly to your door.',
+      icon: <Home className="h-6 w-6 text-pink-700" />,
+      bgColor: 'bg-pink-100',
     },
   ];
 
   useEffect(() => {
-    gsap.from(cardsRef.current, {
-      scrollTrigger: {
-        trigger: cardsRef.current,
-        start: 'top 80%',
-      },
-      y: 50,
-      opacity: 0,
-      duration: 0.8,
-      stagger: 0.2,
-      ease: 'power3.out',
+    gsap.utils.toArray(stepsRef.current).forEach((el, idx) => {
+      gsap.from(el, {
+        scrollTrigger: {
+          trigger: el,
+          start: 'top 80%',
+        },
+        opacity: 0,
+        y: 40,
+        duration: 0.6,
+        delay: idx * 0.2,
+        ease: 'power3.out',
+      });
     });
   }, []);
 
   return (
-    <section id="how-it-works" className="w-full bg-white py-20 px-4">
-      <div className="max-w-7xl mx-auto text-center">
-        <h2 className="text-3xl text-blue-800 font-bold mb-4">How It Works</h2>
-        <div style={{ width: '220px' }} className="h-1 bg-black mx-auto mb-8"></div>
-
-        <p className="text-gray-500 mb-12 text-lg max-w-2xl mx-auto">
-          Simple steps to get your groceries delivered to your doorstep
+    <section id="how-it-works" className="w-full bg-gray-50 py-16 px-4">
+      <div className="max-w-6xl mx-auto text-center mb-12">
+        <h2 className="text-3xl md:text-3xl font-extrabold text-blue-800 mb-5">How It Works</h2>
+         <div style={{ width: '200px' }} className="h-1 bg-black mx-auto mb-10"></div>
+        <p className="text-gray-500 text-base md:text-lg mb-10">
+          Simple steps to get your groceries delivered seamlessly
         </p>
+      </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6">
-          {steps.map((step, index) => (
-            <div
-              key={step.id}
-              ref={(el) => (cardsRef.current[index] = el)}
-              className="relative group"
-            >
-              <div className="h-[280px] flex flex-col justify-between bg-white shadow-md hover:shadow-lg rounded-xl p-6 transition-all duration-300 text-center">
-                <div>
-                  <div className="w-14 h-14 rounded-xl flex items-center justify-center mx-auto mb-4 bg-blue-100 relative">
-                    {step.icon}
-                    <span className="absolute -top-2 -right-2 bg-blue-800 text-white rounded-full w-6 h-6 flex items-center justify-center text-sm font-semibold">
-                      {step.id}
-                    </span>
-                  </div>
-
-                  <h3 className="text-lg font-semibold mb-2">{step.title}</h3>
-                  <p className="text-gray-500 text-sm leading-relaxed">
-                    {step.description}
-                  </p>
-                </div>
-              </div>
-
-              {index !== steps.length - 1 && (
-                <div className="hidden md:block absolute top-1/2 -right-4 transform -translate-y-1/2">
-                  <ArrowRight className="text-blue-800" />
-                </div>
-              )}
+      <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-10">
+        {steps.map((step, index) => (
+          <div
+            key={index}
+            ref={(el) => (stepsRef.current[index] = el)}
+            className="relative border-t-2 border-gray-300 pt-10 text-center group bg-white rounded-lg p-5 shadow hover:shadow-xl transition duration-300 hover:scale-105"
+          >
+            <div className={`absolute -top-6 left-1/2 transform -translate-x-1/2 ${step.bgColor} p-3 rounded-full shadow`}>
+              {step.icon}
             </div>
-          ))}
-        </div>
+            <p className="text-xs uppercase text-blue-800 font-semibold mb-2">{step.type}</p>
+            <h3 className="text-lg font-bold text-gray-800 mb-2 group-hover:text-blue-600">{step.title}</h3>
+            <p className="text-gray-600 text-sm">{step.description}</p>
+          </div>
+        ))}
       </div>
     </section>
   );

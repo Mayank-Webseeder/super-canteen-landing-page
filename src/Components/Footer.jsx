@@ -19,7 +19,7 @@ export default function Footer() {
           alt="Footer Logo"
           width={170}
           height={200}
-          className="rotate-[90deg] opacity-40"
+          className="rotate-[90deg]  opacity-40"
         />
       </div>
 

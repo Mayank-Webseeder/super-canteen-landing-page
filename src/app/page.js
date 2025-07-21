@@ -6,6 +6,7 @@ import About from "@/Components/About";
 import Works from "@/Components/Works";
 import GetInTouch from "@/Components/GetInTouch";
 import Store from "@/Components/Store";
+import Testimonials from "@/Components/Testimonials";
 
 
 export default function Home() {
@@ -18,6 +19,7 @@ export default function Home() {
         <About />
         <Works />
         <Store />
+        <Testimonials />
         <GetInTouch />
       </main> 
       <Footer/>

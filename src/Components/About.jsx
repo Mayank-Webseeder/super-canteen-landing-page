@@ -1,17 +1,10 @@
 'use client';
 
 import { useEffect, useRef } from 'react';
-import gsap from 'gsap';
 import React from 'react';
+import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import {
-  Clock,
-  ShoppingCart,
-  Truck,
-  Shield,
-  Percent,
-  Headphones,
-} from 'lucide-react';
+import { ShoppingCart, Clock, Truck, Shield, Percent, Headphones } from 'lucide-react';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -28,7 +21,7 @@ export default function AboutSection() {
           opacity: 1,
           duration: 0.8,
           ease: 'power3.out',
-          delay: index * 0.1, // small stagger
+          delay: index * 0.1,
           scrollTrigger: {
             trigger: card,
             start: 'top 80%',
@@ -40,79 +33,85 @@ export default function AboutSection() {
 
   const features = [
     {
-      icon: <ShoppingCart className="h-7 w-7 text-blue-800" />,
+      icon: <ShoppingCart className="h-8 w-8 text-blue-800" />,
       title: 'Wide Selection',
-      desc: '10,000+ products from groceries to household items',
+      desc: 'We offer a vast selection of over 10,000 products including groceries, household essentials, and more. Find everything you need in one place without hassle.',
     },
     {
-      icon: <Clock className="h-7 w-7 text-blue-800" />,
+      icon: <Clock className="h-8 w-8 text-blue-800" />,
       title: 'Quick Delivery',
-      desc: 'Same-day delivery within 2–4 hours',
+      desc: 'Our same-day delivery ensures that your essentials reach you within 2–4 hours, providing a swift and reliable service when you need it most.',
     },
     {
-      icon: <Truck className="h-7 w-7 text-blue-800" />,
+      icon: <Truck className="h-8 w-8 text-blue-800" />,
       title: 'Free Delivery',
-      desc: 'Free delivery on orders above ₹500',
+      desc: 'Enjoy free delivery on all orders above ₹500, ensuring affordability along with convenience for every customer.',
     },
     {
-      icon: <Shield className="h-7 w-7 text-blue-800" />,
+      icon: <Shield className="h-8 w-8 text-blue-800" />,
       title: 'Quality Assured',
-      desc: 'Fresh products with quality guarantee',
+      desc: 'We guarantee the freshness and quality of all our products, so you can shop with confidence every time.',
     },
     {
-      icon: <Percent className="h-7 w-7 text-blue-800" />,
+      icon: <Percent className="h-8 w-8 text-blue-800" />,
       title: 'Best Prices',
-      desc: 'Competitive prices just like DMart',
+      desc: 'Get the most competitive prices in the market, comparable to top players like DMart, giving you great value for your money.',
     },
     {
-      icon: <Headphones className="h-7 w-7 text-blue-800" />,
+      icon: <Headphones className="h-8 w-8 text-blue-800" />,
       title: '24/7 Support',
-      desc: 'Round the clock customer support',
+      desc: 'Our customer support is available around the clock to assist you with any queries or issues you may have.',
     },
   ];
 
   return (
-    <section id="features" className="w-full bg-white py-10 px-4">
-      <div className="max-w-7xl mx-auto text-center">
-        <h2 className="text-3xl md:text-3xl font-bold text-blue-800 mb-4">
-          Why Choose Super Canteen?
-        </h2>
+    <section id="about" className="w-full bg-white py-12 px-4">
+      <div className="max-w-6xl mx-auto text-center mb-12">
+        <h2 className="text-3xl font-bold text-blue-800 mb-2">Why Choose Super Canteen?</h2>
         <div style={{ width: '400px' }} className="h-1 bg-black mx-auto mb-8"></div>
-
-        <p className="text-lg text-gray-600 mb-16 max-w-3xl mx-auto">
+        <p className="text-gray-600 text-base max-w-2xl mx-auto">
           We make grocery shopping simple, convenient, and affordable for everyone. Experience the future of grocery shopping with our innovative features.
         </p>
+      </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          {features.map((feature, idx) => (
-            <FeatureCard
-              key={idx}
-              icon={feature.icon}
-              title={feature.title}
-              desc={feature.desc}
-              ref={(el) => (cardsRef.current[idx] = el)}
-            />
-          ))}
-        </div>
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-7xl mx-auto">
+        {features.map((feature, idx) => (
+          <FeatureCard
+            key={idx}
+            icon={feature.icon}
+            title={feature.title}
+            desc={feature.desc}
+            id={idx + 1}
+            ref={(el) => (cardsRef.current[idx] = el)}
+          />
+        ))}
       </div>
     </section>
   );
 }
 
-const FeatureCard = React.forwardRef(({ icon, title, desc }, ref) => {
+const FeatureCard = React.forwardRef(({ icon, title, desc, id }, ref) => {
   return (
     <div
       ref={ref}
-      className="rounded-xl p-8 bg-white text-center shadow-lg border border-transparent transition-all duration-300 hover:shadow-lg hover:-translate-y-1 hover:border-blue-800"
+      className="relative bg-white border border-gray-200 rounded-lg p-6 shadow-sm transform transition-transform duration-500 group hover:scale-105 hover:bg-blue-50"
     >
-      <div className="w-14 h-14 mx-auto rounded-full flex items-center justify-center mb-4 bg-blue-100">
-        {icon}
+      {/* Left Blue Line on Hover */}
+      <div className="absolute left-0 top-0 h-full w-1 bg-blue-800 opacity-0 group-hover:opacity-100 transition-all duration-300 rounded-l-lg"></div>
+
+      <div className="flex items-center justify-between mb-4">
+        <div className="p-2 rounded-full bg-blue-100 text-blue-800 group-hover:bg-blue-200 transition-all duration-300">
+          {icon}
+        </div>
+        <div className="flex-1 border-t border-blue-800 mx-4"></div>
+        <div className="text-lg text-gray-400 font-semibold">{id}</div>
       </div>
-      <h3 className="text-xl font-semibold text-gray-800 mb-2">{title}</h3>
-      <p className="text-sm text-gray-600">{desc}</p>
+
+      <h3 className="text-lg font-semibold text-gray-800 mb-2">{title}</h3>
+      <p className="text-gray-600 text-sm">{desc}</p>
     </div>
+
   );
 });
 
 FeatureCard.displayName = 'FeatureCard';
-  
