@@ -65,7 +65,7 @@ export default function AboutSection() {
   ];
 
   return (
-    <section id="about" className="w-full bg-white py-12 px-4">
+    <section id="features" className="w-full bg-white py-12 px-4">
       <div className="max-w-6xl mx-auto text-center mb-12">
         <h2 className="text-3xl font-bold text-blue-800 mb-2">Why Choose Super Canteen?</h2>
         <div style={{ width: '400px' }} className="h-1 bg-black mx-auto mb-8"></div>

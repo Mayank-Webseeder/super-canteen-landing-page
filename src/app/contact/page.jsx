@@ -3,7 +3,7 @@
 import ContactForm from '@/Components/Contactform';
 import Footer from '@/Components/Footer';
 import Header from '@/Components/Header';
-import { Mail, Phone, MapPin } from 'lucide-react';
+import { Mail, Phone, MapPin, Clock } from 'lucide-react';
 import Image from 'next/image';
 
 export default function ContactPage() {
@@ -17,31 +17,65 @@ export default function ContactPage() {
           <h1 className="text-4xl font-bold text-gray-800 mb-4">
             Get in <span className="text-blue-800 decoration-black">Touch</span>
           </h1>
+          <div style={{ width: '210px' }} className="h-1 bg-black mx-auto mb-5"></div>
           <p className="text-gray-600 text-lg">We’re here to answer any questions you may have.</p>
         </div>
 
         {/* Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
-          {/* Contact Info with background image */}
-          <div className="relative rounded-xl overflow-hidden shadow">
-            {/* Background Image */}
-            <div className="absolute inset-0">
-              <Image
-                src="/contact-us.webp"
-                alt="Contact Background"
-                fill
-                className="object-cover object-center filter brightness-[0.4] blur-sm"
-              />
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-10 items-stretch">
+          {/* Contact Info Card */}
+          <div className="relative rounded-xl overflow-hidden shadow-lg flex flex-col bg-white h-full">
+            {/* Top Paragraph */}
+            <div className="p-4 text-gray-800 text-lg font-semibold bg-gray-100 text-center">
+              We value your queries! Visit us or contact directly.
             </div>
 
-            {/* Content Overlay */}
-            <div className="relative z-10 flex items-center justify-center h-full p-8">
-              <div className="rounded-2xl p-8 md:p-10 text-center max-w-3xl mx-auto backdrop-blur-sm bg-white/10">
-                <h3 className="text-2xl font-semibold text-gray-100 mb-4">Visit Our Outlet</h3>
-                <p className="text-lg text-gray-300 leading-relaxed">
-                  📍 <strong>Location:</strong> Aligarh, Uttar Pradesh <br />
-                  🕒 <strong>Timing:</strong> 8 AM – 10 PM, All Days <br />
-                  📞 <strong>Phone:</strong> +91 81265 06700
+            {/* Image */}
+            <div className="relative w-full h-[280px]">
+              <div className="relative w-full h-full overflow-hidden rounded-sm">
+                <Image
+                  src="/contact-us.webp"
+                  alt="Team Collaboration"
+                  fill
+                  className="object-cover object-center transition-transform duration-300 hover:scale-105"
+                />
+              </div>
+
+            </div>
+
+            {/* Contact Details */}
+            <div className="flex flex-col justify-end items-center text-center p-6 bg-gray-50 flex-grow rounded-lg shadow-md">
+              <h3 className="text-2xl font-bold mb-6 text-gray-900 border-b-2 border-gray-300 pb-2 w-full max-w-xs">
+                Visit Our Outlet
+              </h3>
+
+              <div className="flex flex-col gap-4 text-gray-700 text-lg">
+                <p className="flex items-center font-semibold gap-3 hover:text-blue-600 transition">
+                  <span className="bg-yellow-100 p-2 rounded-full">
+                    <MapPin className="text-yellow-500 w-5 h-5" />
+                  </span>
+                  Aligarh, Uttar Pradesh
+                </p>
+
+                <p className="flex items-center gap-3 font-semibold hover:text-blue-600 transition">
+                  <span className="bg-green-100 p-2 rounded-full">
+                    <Clock className="text-green-500 w-5 h-5" />
+                  </span>
+                  8 AM – 10 PM, All Days
+                </p>
+
+                <p className="flex items-center gap-3 font-semibold hover:text-blue-600 transition">
+                  <span className="bg-pink-100 p-2 rounded-full">
+                    <Phone className="text-pink-500 w-5 h-5" />
+                  </span>
+                  +91 81265 06700
+                </p>
+
+                <p className="flex items-center gap-3 font-semibold hover:text-blue-600 transition">
+                  <span className="bg-blue-100 p-2 rounded-full">
+                    <Mail className="text-blue-500 w-5 h-5" />
+                  </span>
+                  info@supercanteen.in
                 </p>
               </div>
             </div>
@@ -50,7 +84,9 @@ export default function ContactPage() {
           </div>
 
           {/* Contact Form */}
-          <ContactForm />
+          <div className="shadow-lg bg-white rounded-xl p-6 md:p-10">
+            <ContactForm />
+          </div>
         </div>
       </div>
 

@@ -1,6 +1,6 @@
 'use client';
 
-import { useEffect, useRef } from 'react';
+import { useLayoutEffect, useRef } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import gsap from 'gsap';
@@ -14,15 +14,19 @@ export default function Hero() {
   const statsRef = useRef(null);
   const imageRef = useRef(null);
 
-  useEffect(() => {
-    const tl = gsap.timeline({ defaults: { ease: 'power3.out', duration: 0.8 } });
+  useLayoutEffect(() => {
+    const ctx = gsap.context(() => {
+      const tl = gsap.timeline({ defaults: { ease: 'power3.out', duration: 0.8 } });
 
-    tl.from(headingRef.current, { y: -50, opacity: 0 })
-      .from(para1Ref.current, { x: -50, opacity: 0 }, '-=0.4')
-      .from(para2Ref.current, { x: -50, opacity: 0 }, '-=0.6')
-      .from(buttonsRef.current, { opacity: 0, y: 30 }, '-=0.5')
-      .from(statsRef.current, { y: 30, opacity: 0 }, '-=0.5')
-      .from(imageRef.current, { scale: 0.8, opacity: 0 }, '-=0.5');
+      tl.from(headingRef.current, { y: -50, opacity: 0 })
+        .from(para1Ref.current, { x: -50, opacity: 0 }, '-=0.4')
+        .from(para2Ref.current, { x: -50, opacity: 0 }, '-=0.6')
+        .from(buttonsRef.current, { opacity: 0, y: 30 }, '-=0.5')
+        .from(statsRef.current, { y: 30, opacity: 0 }, '-=0.5')
+        .from(imageRef.current, { scale: 0.8, opacity: 0 }, '-=0.5');
+    });
+
+    return () => ctx.revert(); // clean up
   }, []);
 
   return (

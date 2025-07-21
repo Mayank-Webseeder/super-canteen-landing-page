@@ -27,7 +27,7 @@ export default function ContactForm() {
       <div className="space-y-1">
         <label className="block text-sm font-semibold text-gray-600">Message</label>
         <textarea
-          rows="4"
+          rows="3"
           placeholder="Your message..."
           className="w-full border border-gray-300 px-4 py-3 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-800 bg-gray-50 shadow-inner transition-all duration-300 focus:scale-105 resize-none"
         ></textarea>
