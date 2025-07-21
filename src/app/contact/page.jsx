@@ -45,28 +45,28 @@ export default function ContactPage() {
 
             {/* Contact Details */}
             <div className="flex flex-col justify-end items-center text-center p-6 bg-gray-50 flex-grow rounded-lg shadow-md">
-              <h3 className="text-2xl font-bold mb-6 text-gray-900 border-b-2 border-gray-300 pb-2 w-full max-w-xs">
+              <h3 className="text-2xl font-bold mb-6 text-blue-600 border-b-2 border-gray-300 pb-2 w-full max-w-xs">
                 Visit Our Outlet
               </h3>
 
               <div className="flex flex-col gap-4 text-gray-700 text-lg">
                 <p className="flex items-center font-semibold gap-3 hover:text-blue-600 transition">
-                  <span className="bg-yellow-100 p-2 rounded-full">
-                    <MapPin className="text-yellow-500 w-5 h-5" />
+                  <span className="bg-blue-100 p-2 rounded-full">
+                    <MapPin className="text-blue-500 w-5 h-5" />
                   </span>
                   Aligarh, Uttar Pradesh
                 </p>
 
                 <p className="flex items-center gap-3 font-semibold hover:text-blue-600 transition">
-                  <span className="bg-green-100 p-2 rounded-full">
-                    <Clock className="text-green-500 w-5 h-5" />
+                  <span className="bg-blue-100 p-2 rounded-full">
+                    <Clock className="text-blue-500 w-5 h-5" />
                   </span>
                   8 AM – 10 PM, All Days
                 </p>
 
                 <p className="flex items-center gap-3 font-semibold hover:text-blue-600 transition">
-                  <span className="bg-pink-100 p-2 rounded-full">
-                    <Phone className="text-pink-500 w-5 h-5" />
+                  <span className="bg-blue-100 p-2 rounded-full">
+                    <Phone className="text-blue-500 w-5 h-5" />
                   </span>
                   +91 81265 06700
                 </p>
