@@ -37,7 +37,7 @@ export default function Hero() {
 
       <div className="absolute inset-0 bg-black opacity-80"></div>
 
-      <div className="relative z-10 w-full max-w-7xl mx-auto flex flex-col md:flex-row items-center px-6 text-white">
+      <div className="relative z-10 mt-5 w-full max-w-7xl mx-auto flex flex-col md:flex-row items-center px-6 text-white">
         <div className="w-full md:w-1/2 text-left pl-4 md:pl-8 space-y-8">
           <h1 ref={headingRef} className="text-4xl md:text-5xl font-extrabold mb-4 leading-tight">
             Shop Smarter, <br />Live Better with <br />
@@ -45,7 +45,7 @@ export default function Hero() {
           </h1>
 
           <p ref={para1Ref} className="text-lg mb-2 text-gray-300">
-            Your ultimate hub for <span className="text-yellow-400 font-semibold">fresh groceries</span>, essentials & snacks — delivered fast!
+            Your ultimate hub for <span className="text-yellow-400 font-semibold">fresh groceries</span>, essentials & snacks <br />— delivered fast!
           </p>
 
           <p ref={para2Ref} className="text-lg mb-6 text-gray-300">
@@ -72,7 +72,7 @@ export default function Hero() {
             </a>
           </div>
 
-          <div ref={statsRef} className="grid grid-cols-1 sm:grid-cols-3 gap-4">
+          <div ref={statsRef} className="grid grid-cols-1 sm:grid-cols-3 gap-1">
             <StatCard icon={<Users />} count="10K+" label="Happy Customers" />
             <StatCard icon={<ShoppingBag />} count="100%" label="Fresh Products" />
             <StatCard icon={<Star />} count="4.9★" label="Customer Rating" />
@@ -83,8 +83,8 @@ export default function Hero() {
           <Image
             src="/grocery.svg"
             alt="Supermarket Illustration"
-            width={600}
-            height={500}
+            width={500}
+            height={350}
             className="object-contain"
             priority
           />
@@ -95,9 +95,12 @@ export default function Hero() {
 }
 
 const StatCard = ({ icon, count, label }) => (
-  <div className="border border-gray-400 rounded-lg p-4 text-center bg-white bg-opacity-10 backdrop-blur-sm text-gray-200 shadow-md hover:scale-105 transition">
-    <div className="flex justify-center mb-2 text-blue-400">{icon}</div>
-    <h3 className="text-2xl font-bold mb-1">{count}</h3>
-    <p className="text-sm">{label}</p>
+  <div className="w-32 sm:w-36 md:w-40 border border-gray-400 rounded-lg p-3 text-center bg-white bg-opacity-10 backdrop-blur-sm text-gray-200 shadow-md hover:scale-105 transition">
+    <div className="flex justify-center mb-1 text-blue-400 text-2xl">{icon}</div>
+    <h3 className="text-lg font-bold mb-1">{count}</h3>
+    <p className="text-xs">{label}</p>
   </div>
 );
+
+
+
