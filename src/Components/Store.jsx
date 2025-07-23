@@ -26,7 +26,7 @@ const storeData = [
 
 export default function Store() {
   return (
-    <section className="w-full bg-white py-12 px-4">
+    <section className="w-full bg-gray-100 py-12 px-4">
       <div className="max-w-6xl mx-auto">
         {/* Section Heading */}
         <h2 className="text-3xl font-bold text-center text-blue-800 mb-2">Our Store</h2>

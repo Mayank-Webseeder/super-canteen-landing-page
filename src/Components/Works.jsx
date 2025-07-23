@@ -62,9 +62,9 @@ export default function Works() {
   }, []);
 
   return (
-    <section id="how-it-works" className="w-full bg-gray-50 py-16 px-4">
+    <section id="how-it-works" className="w-full bg-gray-100 py-10 px-4">
       <div className="max-w-6xl mx-auto text-center mb-12">
-        <h2 className="text-3xl md:text-3xl font-extrabold text-blue-800 mb-5">How It Works</h2>
+        <h2 className="text-3xl md:text-3xl font-extrabold text-blue-800 mb-2">How It Works</h2>
          <div style={{ width: '200px' }} className="h-1 bg-black mx-auto mb-10"></div>
         <p className="text-gray-500 text-base md:text-lg mb-10">
           Simple steps to get your groceries delivered seamlessly
