@@ -13,17 +13,17 @@ export default function Footer() {
   return (
     <footer className="relative w-full bg-gray-900 text-white overflow-hidden">
       {/* Rotated Logo on bottom-left */}
-      <div className="absolute top-20 left-[-20]">
+      <div className="absolute top-20 left-[-20] z-0 pointer-events-none">
         <Image
           src="/Logo1.png"
           alt="Footer Logo"
           width={170}
           height={200}
-          className="rotate-[90deg]  opacity-40"
+          className="rotate-[90deg] opacity-40"
         />
       </div>
 
-      <div className="mx-auto max-w-screen-xl px-6 py-10">
+      <div className="mx-auto max-w-screen-xl px-6 py-10 relative z-10">
         {/* Top Footer Grid */}
         <div className="flex flex-col md:flex-row justify-between gap-12">
           {/* Left - Brand */}
@@ -94,7 +94,7 @@ export default function Footer() {
               href="https://webseeder.in"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-white font-semibold"
+              className="text-white font-semibold hover:text-gray-300"
             >
               WEBSEEDER TECHNOLOGIES
             </a>
