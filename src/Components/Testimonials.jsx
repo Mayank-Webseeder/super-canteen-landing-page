@@ -61,7 +61,7 @@ export default function Testimonials() {
         {/* Heading */}
         <div className="text-center mb-12">
           <h2 className="text-4xl font-bold text-blue-800 mb-2">What Customers Say About Us</h2>
-           <div style={{ width: '500px' }} className="h-1 bg-black mx-auto mb-10"></div>
+          <div style={{ width: '500px' }} className="h-1 bg-black mx-auto mb-10"></div>
           <p className="text-gray-600 text-lg">
             Join thousands who love the Super Canteen experience — here’s what they’re saying!
           </p>
@@ -111,7 +111,7 @@ export default function Testimonials() {
                 </button>
               </Link>
               <a
-                href="https://play.google.com/store/apps/details?id=com.supercanteen.app"
+                href="https://play.google.com/store/apps/details?id=com.supercanteen"
                 target="_blank"
                 rel="noopener noreferrer"
               >

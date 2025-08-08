@@ -40,10 +40,10 @@ export default function Footer() {
                 className="text-gray-300 hover:text-white transition-colors duration-200">
                 <Instagram size={32} />
               </a>
-              <button className="bg-gray-600 hover:bg-gray-700 text-white px-3 py-2 rounded-lg text-base font-medium transition-transform transform flex items-center gap-2">
+              <Link href="https://play.google.com/store/apps/details?id=com.supercanteen" target='_blank' className="bg-gray-600 hover:bg-gray-700 text-white px-3 py-2 rounded-lg text-base font-medium transition-transform transform flex items-center gap-2">
                 <Image src="/playstore.png" alt="Play Store" width={20} height={20} />
                 Get App
-              </button>
+              </Link>
             </div>
           </div>
 
@@ -66,7 +66,7 @@ export default function Footer() {
 
               <div className="flex items-start md:items-center justify-center md:justify-start gap-2 md:gap-3">
                 <Phone className="h-5 w-5 text-blue-600 flex-shrink-0" />
-                <span>+91 81265 06700</span>
+                <span>+91 9557919140</span>
               </div>
 
               <div className="flex items-start md:items-center justify-center md:justify-start gap-2 md:gap-3 break-words">

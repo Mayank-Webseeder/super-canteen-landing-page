@@ -68,7 +68,7 @@ export default function ContactPage() {
                   <span className="bg-blue-100 p-2 rounded-full">
                     <Phone className="text-blue-500 w-5 h-5" />
                   </span>
-                  +91 81265 06700
+                  +91 9557919140
                 </p>
 
                 <p className="flex items-center gap-3 font-semibold hover:text-blue-600 transition">

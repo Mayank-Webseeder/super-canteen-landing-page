@@ -8,7 +8,7 @@ export default function GetInTouch() {
   return (
     <section id="get-in-touch" className="w-full bg-gradient-to-br from-gray-50 to-gray-100 py-20 px-4">
       <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-        
+
         {/* Left - Contact Info */}
         <div className="space-y-8">
           <div>
@@ -25,7 +25,7 @@ export default function GetInTouch() {
               <div className="bg-blue-100 p-2 rounded-full text-blue-800">
                 <Phone />
               </div>
-              <span className="text-gray-700 font-medium">+91 81265 06700</span>
+              <span className="text-gray-700 font-medium">+91 9557919140</span>
             </div>
 
             <div className="flex items-center gap-4 p-4 bg-white rounded-lg shadow hover:scale-105 transition-transform">

@@ -54,15 +54,15 @@ export default function Hero() {
           </p>
 
           <div ref={buttonsRef} className="flex flex-col sm:flex-row gap-4 mb-8">
-            <Link href="/contact">
+            {/* <Link href="/contact">
               <button className="bg-gradient-to-r from-blue-500 to-blue-800 hover:from-blue-600 hover:to-blue-900 text-white px-6 py-3 rounded-lg text-base font-semibold flex items-center gap-2 shadow-lg hover:scale-105 transition">
                 <MessageSquare className="w-5 h-5" />
                 Start Conversation
               </button>
-            </Link>
+            </Link> */}
 
             <a
-              href="https://play.google.com/store/apps/details?id=com.supercanteen.app"
+              href="https://play.google.com/store/apps/details?id=com.supercanteen"
               target="_blank"
               rel="noopener noreferrer"
             >
