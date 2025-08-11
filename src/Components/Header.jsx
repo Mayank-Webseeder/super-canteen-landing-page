@@ -149,7 +149,7 @@ export default function Header() {
             </div>
             <div className="flex items-center justify-center gap-2">
               <span>📞</span>
-              <span>+91 81265 06700</span>
+              <span>+91 9557919140</span>
             </div>
           </div>
         </div>
