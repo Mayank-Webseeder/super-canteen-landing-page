@@ -53,7 +53,8 @@ export default function Hero() {
             We ensure <span className="text-orange-400 font-semibold">top quality</span>, lightning-fast delivery, and customer happiness — right to your doorstep.
           </p>
 
-          <div ref={buttonsRef} className="flex flex-col sm:flex-row gap-4 mb-8">
+          {/* Added ref here so GSAP animation works */}
+          <div ref={buttonsRef} className="flex flex-col items-center sm:items-start gap-4 mb-8">
             {/* <Link href="/contact">
               <button className="bg-gradient-to-r from-blue-500 to-blue-800 hover:from-blue-600 hover:to-blue-900 text-white px-6 py-3 rounded-lg text-base font-semibold flex items-center gap-2 shadow-lg hover:scale-105 transition">
                 <MessageSquare className="w-5 h-5" />
@@ -73,7 +74,10 @@ export default function Hero() {
             </a>
           </div>
 
-          <div ref={statsRef} className="grid grid-cols-1 sm:grid-cols-3 gap-3 sm:gap-4">
+          <div
+            ref={statsRef}
+            className="grid grid-cols-1 sm:grid-cols-3 gap-3 sm:gap-4 justify-items-center"
+          >
             <StatCard icon={<Users />} count="10K+" label="Happy Customers" />
             <StatCard icon={<ShoppingBag />} count="100%" label="Fresh Products" />
             <StatCard icon={<Star />} count="4.9★" label="Customer Rating" />
